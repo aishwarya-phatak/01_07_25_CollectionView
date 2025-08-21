@@ -44,6 +44,16 @@ extension ViewController : UICollectionViewDataSource{
 
 extension ViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        let totalWidth = self.productCollectionView.frame.width
+        print(totalWidth)
+        let cellHeight = totalWidth/3.0
+        let cellWidth = totalWidth/3.0
+        print(cellWidth)
+        print(cellHeight)
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
     }
 }
